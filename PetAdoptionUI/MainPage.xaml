@@ -1,0 +1,46 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PetAdoptionUI.MainPage"
+             BackgroundColor="{DynamicResource SecondaryColor}">
+ 
+    <!-- Main layout-->
+    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*,*">
+        <!-- 1. Profile picture-->
+        <Image Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Source="pet.png" Aspect="Fill" HeightRequest="400"/>
+
+        <!-- 2. Pet Card-->
+        <Frame Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" CornerRadius="40" HasShadow="False" Margin="20,-80,20,10" BackgroundColor="#f9f9f9" HeightRequest="100">
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="Auto,*,Auto" VerticalOptions="Center" HorizontalOptions="FillAndExpand" RowSpacing="10" Padding="20,5">
+                <!-- General information-->
+                <Label Grid.Row="0" Grid.Column="0" Text="Martha" FontAttributes="Bold" FontSize="21" TextColor="Black"/>
+                <Image Grid.Row="0" Grid.Column="2" Source="symbol" Aspect="AspectFit" HorizontalOptions="End" WidthRequest="22" HeightRequest="22"/>
+                <Label Grid.Row="1" Grid.Column="0" Text="Border collie" TextColor="#797979" FontSize="17" />
+                <Image Grid.Row="1" Grid.Column="1" Source="clock" HorizontalOptions="End" Aspect="AspectFit"  WidthRequest="22" HeightRequest="22"/>
+                <Label Grid.Row="1" Grid.Column="2" Text="1 year old" TextColor="#797979" FontSize="15" HorizontalTextAlignment="End" />
+                <Image Grid.Row="2" Grid.Column="0" Source="location" Aspect="AspectFit"  WidthRequest="22" HeightRequest="22" HorizontalOptions="Start" />
+                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" TextColor="#acacac" TranslationX="20" VerticalTextAlignment="Center" Text="120 N 4th St, Brooklyn, NY, USA" HorizontalOptions="Center" FontSize="15"/>
+            </Grid>
+        </Frame>
+
+        <!--3. Details -->
+
+        <!-- Rounded image-->
+        <Frame Grid.Row="2" Grid.Column="0" Grid.RowSpan="2" BorderColor="White" HorizontalOptions="Center" WidthRequest="70" HeightRequest="70" HasShadow="False" CornerRadius="35" Padding="0" IsClippedToBounds="True">
+            <Image Source="owner" Aspect="AspectFill"/>
+        </Frame>
+
+        <!-- Main name, roles and date -->
+        <Label Grid.Row="2" Grid.Column="1" HorizontalOptions="Start" Text="Harry Jones" TextColor="Black" FontAttributes="Bold" Margin="0,30,0,0"/>
+        <Label Grid.Row="2" Grid.Column="2" Text="24.01.2022" HorizontalTextAlignment="End" TextColor="#acacac" Margin="0,30,25,0" FontSize="14"/>
+        <Label Grid.Row="3" Grid.Column="1" HorizontalOptions="Start" Text="Owner" TextColor="#acacac"/>
+
+        <!-- Description-->
+        <Label Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" Margin="{OnPlatform Android='35,20,35,15', iOS='35,20,35,0'}" TextColor="#a5a5a5" Text="Hi! Martha has impeccable manners when I fisrt met her, most of which I've since undone. She's also become very 'chatty' with a full range of Scooby Doo noises when she doesn't feel she's getting the attention she deserves."/>
+
+        <!--Buttons-->
+        <Button Grid.Row="5" Grid.Column="0" TextColor="Black" Text="♡" BackgroundColor="White" BorderColor="Silver" BorderWidth="1" WidthRequest="50" HeightRequest="50" CornerRadius="25" HorizontalOptions="End" />
+        <Button Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Text="Adoption" FontAttributes="Bold" CornerRadius="22" TextColor="Black" BackgroundColor="#fbce56" Margin="20,0,40,0" />
+
+    </Grid>
+
+</ContentPage>
